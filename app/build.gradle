@@ -4,6 +4,7 @@ apply plugin: "org.sonarqube"
 
 android {
     compileSdkVersion 26
+    buildToolsVersion '26.0.1'
     defaultConfig {
         applicationId "mohammadhendy.sampleciapp"
         minSdkVersion 19
