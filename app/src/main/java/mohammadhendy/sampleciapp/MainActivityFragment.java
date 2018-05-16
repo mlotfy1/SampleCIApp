@@ -11,7 +11,9 @@ import android.view.ViewGroup;
  */
 public class MainActivityFragment extends Fragment {
 
+    public final String password = "my password";
     public MainActivityFragment() {
+        System.out.print(password);
     }
 
     @Override
