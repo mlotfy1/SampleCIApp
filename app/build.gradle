@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: "org.sonarqube"
+apply plugin: "maven"
 
 android {
     compileSdkVersion 26
@@ -29,4 +30,29 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://nexus-vfhu.skytap-tss.vodafone.com/repository/Android-releases/") {
+                authentication(userName: "${nexus_username}", password: "${nexus_password}")
+            }
+            pom {
+                version = 1.0
+                artifactId = 'debug_apk'
+                groupId = 'mohammadhendy.sampleciapp'
+
+                }
+            }
+        }
+}
+
+
+def apk = file('build/outputs/apk/debug/app-debug.apk')
+//def apk = file('build/outputs/apk/debug/output.json')
+
+
+artifacts {
+    archives apk
 }
