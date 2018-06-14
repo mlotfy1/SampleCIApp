@@ -1,11 +1,11 @@
 pipeline {
   agent { label 'Android'}
   stages {
-    stage ("Checkout Git Repo") {
-      steps {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '4250c329-cb83-4d62-ac3c-bd7ac7aef127', url: 'https://github.vodafone.com/Mohamed-Hendy/SampleCIApp.git']]])
-      }
-    }
+//    stage ("Checkout Git Repo") {
+//      steps {
+//        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '4250c329-cb83-4d62-ac3c-bd7ac7aef127', url: 'https://github.vodafone.com/Mohamed-Hendy/SampleCIApp.git']]])
+//      }
+//    }
 
     stage ("Build clean") {
       steps {
