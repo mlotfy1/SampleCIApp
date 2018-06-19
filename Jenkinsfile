@@ -1,6 +1,6 @@
 //pipeline {
 //  agent { label 'Android'}
-node('test') {
+node('Android') {
   stages {
 //    stage ("Checkout Git Repo") {
 //      steps {
